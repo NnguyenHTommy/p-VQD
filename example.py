@@ -23,7 +23,7 @@ spins   = 3
 V       = 0.25
 g       = 1.0
 dt      = 0.05
-n_steps = 40
+n_steps = 60
 
 # Algorithm parameters
 
@@ -49,8 +49,9 @@ H = generate_ising(spins,V,g)
 print(wfn)
 print(H)
 
+
 ### Backend
-shots = 8000
+shots = 80
 backend  = Aer.get_backend('qasm_simulator')
 instance = QuantumInstance(backend=backend,shots=shots)
 
@@ -92,7 +93,7 @@ algo = pVQD(hamiltonian   = H,
 
 algo.run(ths,dt,n_steps, 
 	     obs_dict      = obs,
-	     filename      = 'data/trial_results.dat',
+	     filename      = 'data/trial_results_shots_80.dat',
 	     max_iter      = 50,
 	     opt           = opt,
 	     cost_fun      = cost,

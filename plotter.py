@@ -10,7 +10,8 @@ import json
 #==================================
 
 exact  = json.load(open('data/exact_result_J0.25_B1.dat'))
-data   = json.load(open('data/pVQD_J0.25_B1_8000shots.dat'))
+
+data   = json.load(open('data/trial_results.dat'))
 
 fig, ax = plt.subplots(2,1,sharex=True)
 
